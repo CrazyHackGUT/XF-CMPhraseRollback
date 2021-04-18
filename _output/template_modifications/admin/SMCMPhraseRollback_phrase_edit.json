@@ -1,0 +1,9 @@
+{
+    "template": "phrase_edit",
+    "description": "Rollbacks the XF#189036 bug fix",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "preg_replace",
+    "find": "#\\<xf:textarearow [^\\/]+\\/>#s",
+    "replace": "<xf:if is=\"$language.text_direction == 'RTL'\">\n\t$0\n<xf:else />\n\t<xf:codeeditorrow name=\"phrase_text\" value=\"{$phrase.phrase_text}\"\n\t\tmode=\"html\" data-line-wrapping=\"true\" data-line-numbers=\"false\"\n\t\tclass=\"codeEditor--autoSize codeEditor--proportional\"\n\t\tlabel=\"{{ phrase('phrase_text') }}\"\n\t\texplain=\"{{ phrase('phrase_text_explain') }}\" />\n</xf:if>"
+}
